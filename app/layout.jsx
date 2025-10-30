@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={rubik.className}>
         <Navbar />
+        
         {children}
         </body>
     </html>

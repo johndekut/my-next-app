@@ -11,7 +11,7 @@ export default function Navbar() {
       alt= "ninja jonte helpdesk logo"
       width={70}
       height={70}
-      quality={100}
+      quality={75}
       //blur effect before the image loads
       placeholder='blur'
       />
