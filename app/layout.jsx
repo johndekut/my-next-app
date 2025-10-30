@@ -1,11 +1,10 @@
-//manages handling of shared UI eg navars, sidebars and footers
 
-
-//styles inside global.css will apply to every page, component and layout
 import './globals.css'
 //nextjs feature for importing fonts without loading them in html
 import { Inter } from 'next/font/google'
 
+//components
+import Navbar from './components/navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,7 +16,10 @@ export default function RootLayout({ children }) {
   return (
     //html and body tags are edfined here, not in every page
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <navbar />
+        {children}
+        </body>
     </html>
   )
 }
