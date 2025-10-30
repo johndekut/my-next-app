@@ -1,11 +1,11 @@
 
 import './globals.css'
 //nextjs feature for importing fonts without loading them in html
-import { Inter } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 
 //components
 import Navbar from './components/navbar'
-const inter = Inter({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     //html and body tags are edfined here, not in every page
     <html lang="en">
-      <body className={inter.className}>
+      <body className={rubik.className}>
         <navbar />
         {children}
         </body>
