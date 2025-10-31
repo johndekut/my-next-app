@@ -1,3 +1,11 @@
+import { notFound } from "next/navigation";
+
+
+//tell nextt not to accept any routes that were'nt prebuilt
+//Any ID not returned by generateStaticParams will 404 (no fallback)
+export const dynamicParams = false
+
+
 export async function generateStaticParams() {
 const res = await fetch(`http://localhost:4000/tickets/`)
 const tickets = await res.json();
@@ -14,9 +22,7 @@ async function getTicket(id) {
   const res = await fetch(`http://localhost:4000/tickets/${id}`);
 
   if (!res.ok) {
-    const text = await res.text();
-    console.error("Fetch failed:", text);
-    throw new Error("Ticket not found");
+   notFound()
   }
 
   return res.json();
