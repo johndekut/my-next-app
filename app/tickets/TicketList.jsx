@@ -4,9 +4,7 @@ async function getTickets() {
   //immitate delay --intetionally delaying
 await new Promise(resolve =>setTimeout(resolve, 3000))
   const res = await fetch('http://localhost:4000/tickets', {
-    next: {
-      revalidate: 60 *60 *24// use 0 to opt out of using cache
-    }
+   cache: "no-store"
   });
     if (!res.ok) {
     notFound()
