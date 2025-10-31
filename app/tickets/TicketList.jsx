@@ -1,13 +1,13 @@
 import Link from "next/link"
-
+import { notFound } from "next/navigation";
 async function getTickets() {
   const res = await fetch('http://localhost:4000/tickets', {
     next: {
-      revalidate: 0 // use 0 to opt out of using cache
+      revalidate: 60 *60 *24// use 0 to opt out of using cache
     }
   });
     if (!res.ok) {
-    throw new Error("Ticket not found")
+    notFound()
   }
   return res.json()
 
